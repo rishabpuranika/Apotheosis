@@ -154,6 +154,193 @@
 
   <p><b class="calibre3">
 </b></p>
+
+
+
+<div class="controls">
+    <button id="darkModeToggle" class="control-button">Dark Mode</button>
+    <div class="font-size-controls">
+        <button class="control-button" onclick="changeFontSize('small')">A-</button>
+        <button class="control-button" onclick="changeFontSize('medium')">A</button>
+        <button class="control-button" onclick="changeFontSize('large')">A+</button>
+    </div>
+</div>
+
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const fontSizeButtons = document.querySelectorAll('.font-size-controls button');
+
+    function changeFontSize(size) {
+        let fontSize = '16px';
+        if (size === 'small') fontSize = '14px';
+        if (size === 'large') fontSize = '18px';
+        body.style.fontSize = fontSize;
+        localStorage.setItem('fontSize', size);
+        updateActiveFontSizeButton(size);
+    }
+
+    function updateActiveFontSizeButton(size) {
+        fontSizeButtons.forEach(button => {
+            button.classList.remove('active');
+            if(button.textContent.includes('A-') && size === 'small') button.classList.add('active');
+            if(button.textContent === 'A' && size === 'medium') button.classList.add('active');
+            if(button.textContent.includes('A+') && size === 'large') button.classList.add('active');
+        });
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.removeItem('darkMode');
+        }
+    });
+
+    // Apply saved settings on page load
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+
+    const savedSize = localStorage.getItem('fontSize') || 'medium';
+    changeFontSize(savedSize);
+
+</script>
+
+<div class="settings-container">
+    <button id="settingsToggle" class="settings-button">Settings</button>
+    <div id="controlsPopup" class="controls-popup">
+        <button id="darkModeToggle" class="control-button">Dark Mode</button>
+        <div class="font-size-controls">
+            <button class="control-button" onclick="changeFontSize('small')">Small Font</button>
+            <button class="control-button" onclick="changeFontSize('medium')">Medium Font</button>
+            <button class="control-button" onclick="changeFontSize('large')">Large Font</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const settingsToggle = document.getElementById('settingsToggle');
+    const controlsPopup = document.getElementById('controlsPopup');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const fontSizeButtons = document.querySelectorAll('.font-size-controls button');
+
+    function changeFontSize(size) {
+        let fontSize = '16px';
+        if (size === 'small') fontSize = '14px';
+        if (size === 'large') fontSize = '18px';
+        body.style.fontSize = fontSize;
+        localStorage.setItem('fontSize', size);
+        updateActiveFontSizeButton(size);
+    }
+
+    function updateActiveFontSizeButton(size) {
+        fontSizeButtons.forEach(button => {
+            button.classList.remove('active');
+            if(button.textContent.toLowerCase().includes(size)) button.classList.add('active');
+        });
+    }
+    
+    settingsToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        controlsPopup.classList.toggle('visible');
+    });
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.removeItem('darkMode');
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!controlsPopup.contains(event.target) && event.target !== settingsToggle) {
+            controlsPopup.classList.remove('visible');
+        }
+    });
+
+    // Apply saved settings on page load
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+
+    const savedSize = localStorage.getItem('fontSize') || 'medium';
+    changeFontSize(savedSize);
+
+</script>
+
+<div class="settings-container">
+    <button id="settingsToggle" class="settings-button">âš™ï¸</button>
+    <div id="controlsPopup" class="controls-popup">
+        <button id="darkModeToggle" class="control-button">Dark Mode</button>
+        <div class="font-size-controls">
+            <button class="control-button" onclick="changeFontSize('small')">Small Font</button>
+            <button class="control-button" onclick="changeFontSize('medium')">Medium Font</button>
+            <button class="control-button" onclick="changeFontSize('large')">Large Font</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const settingsToggle = document.getElementById('settingsToggle');
+    const controlsPopup = document.getElementById('controlsPopup');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const fontSizeButtons = document.querySelectorAll('.font-size-controls button');
+
+    function changeFontSize(size) {
+        event.stopPropagation();
+        let fontSize = '16px';
+        if (size === 'small') fontSize = '14px';
+        if (size === 'large') fontSize = '18px';
+        body.style.fontSize = fontSize;
+        localStorage.setItem('fontSize', size);
+        updateActiveFontSizeButton(size);
+    }
+
+    function updateActiveFontSizeButton(size) {
+        fontSizeButtons.forEach(button => {
+            button.classList.remove('active');
+            if(button.textContent.toLowerCase().includes(size)) button.classList.add('active');
+        });
+    }
+    
+    settingsToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isVisible = controlsPopup.classList.toggle('visible');
+        settingsToggle.textContent = isVisible ? 'âŒ' : 'âš™ï¸';
+    });
+
+    darkModeToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.removeItem('darkMode');
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!controlsPopup.contains(event.target) && event.target !== settingsToggle) {
+            controlsPopup.classList.remove('visible');
+            settingsToggle.textContent = 'âš™ï¸';
+        }
+    });
+
+    // Apply saved settings on page load
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+
+    const savedSize = localStorage.getItem('fontSize') || 'medium';
+    changeFontSize(savedSize);
+
+</script>
 <style>
 .chapter-navigation {
     position: fixed;
@@ -168,8 +355,8 @@
     box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
     z-index: 1000;
 }
-.nav-button {
-    padding: 8px 16px;
+.nav-button, .control-button {
+    padding: 8px 12px;
     background-color: white;
     color: #2c3e50;
     text-decoration: none;
@@ -178,8 +365,9 @@
     transition: all 0.3s;
     border: 2px solid white;
     font-size: 14px;
+    cursor: pointer;
 }
-.nav-button:hover {
+.nav-button:hover, .control-button:hover {
     background-color: #3498db;
     color: white;
     transform: scale(1.05);
@@ -209,13 +397,100 @@
 }
 body {
     padding-bottom: 50px;
+    font-size: 16px; /* Default font size */
+}
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+.dark-mode .chapter-navigation {
+    background: linear-gradient(to right, #1a2833, #236fa1);
+}
+.dark-mode .nav-button, .dark-mode .control-button {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+.dark-mode .nav-button:hover, .dark-mode .control-button:hover {
+    background-color: #236fa1;
+    color: white;
+}
+.dark-mode h2 {
+    color: #e0e0e0;
+}
+.font-size-controls button.active {
+    background-color: #3498db;
+    color: white;
+}
+.dark-mode .font-size-controls button.active {
+    background-color: #236fa1;
+}
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 </style>
 <div class="chapter-navigation">
-    <a href="Chapter_2813.html" class="nav-button">Previous</a>
-    <a href="index.html" class="index-button">Index</a>
+    <div class="nav-controls">
+        <a href="Chapter_2813.html" class="nav-button">Previous</a>
+        <a href="index.html" class="index-button">Index</a>
+        <a href="Chapter_2815.html" class="nav-button">Next</a>    </div>
     <span class="chapter-info">Chapter 2814 of 4334</span>
-    <a href="Chapter_2815.html" class="nav-button">Next</a>
+    <div class="nav-controls font-size-controls">
+        <button id="darkModeToggle" class="control-button">ðŸŒ™</button>
+        <button class="control-button" onclick="changeFontSize('small')">A-</button>
+        <button class="control-button" onclick="changeFontSize('medium')">A</button>
+        <button class="control-button" onclick="changeFontSize('large')">A+</button>
+    </div>
 </div>
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const fontSizeButtons = document.querySelectorAll('.font-size-controls button');
+
+    function changeFontSize(size) {
+        let fontSize = '16px';
+        if (size === 'small') fontSize = '14px';
+        if (size === 'large') fontSize = '18px';
+        body.style.fontSize = fontSize;
+        localStorage.setItem('fontSize', size);
+        updateActiveFontSizeButton(size);
+    }
+
+    function updateActiveFontSizeButton(size) {
+        fontSizeButtons.forEach(button => {
+            button.classList.remove('active');
+            if(button.textContent.includes('A-') && size === 'small') button.classList.add('active');
+            if(button.textContent === 'A' && size === 'medium') button.classList.add('active');
+            if(button.textContent.includes('A+') && size === 'large') button.classList.add('active');
+        });
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+            darkModeToggle.textContent = 'â˜€ï¸';
+        } else {
+            localStorage.removeItem('darkMode');
+            darkModeToggle.textContent = 'ðŸŒ™';
+        }
+    });
+
+    // Apply saved settings on page load
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+        darkModeToggle.textContent = 'â˜€ï¸';
+    }
+
+    const savedSize = localStorage.getItem('fontSize') || 'medium';
+    changeFontSize(savedSize);
+
+</script>
 </body>
+
+
+
+
 </html>
