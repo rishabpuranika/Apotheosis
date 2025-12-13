@@ -14,6 +14,9 @@
 </head>
 
 <body>
+</div>
+    </div>
+</div>
   <p>
 
    </p>
@@ -43,7 +46,7 @@
 
   <p>This test's main goal was not to pick the strongest among the fighting warriors. It aimed to see who was the best at making decisions, and maximizing his or her strength according to that. Being strong was a plus, but only if you played the game right, otherwise you would be under attack on all sides right from the start.</p>
 
-  <p>Upon watching what was happening, Zheng was able to realize why Jade Martial House organized such a test.</p>
+  <p>Upon watching what was happening, Luo Zheng was able to realize why Jade Martial House organized such a test.</p>
 
   <p>A martial artist's overall strength didn't only include one's cultivation level and power. His or her real strength also had something to do with luck and wisdom. In many occasions, even if someone was the strongest warrior in the field, that person would be easily killed by the tricks played by the enemies. Unfortunately, the guy who was kicked out first had only strength, but no brain.</p>
 
@@ -142,15 +145,18 @@
     background-color: #c0392b;
     transform: scale(1.05);
 }
-body {
-    padding-bottom: 50px;
+body { padding-bottom: 50px; }
+
+.dark-mode .control-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
 }
-</style>
-<div class="chapter-navigation">
-    <a href="Chapter_1066.html" class="nav-button">Previous</a>
-    <a href="index.html" class="index-button">Index</a>
-    <span class="chapter-info">Chapter 1067 of 4334</span>
-    <a href="Chapter_1068.html" class="nav-button">Next</a>
-</div>
-</body>
-</html>
+
+.dark-mode .control-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .control-button.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+

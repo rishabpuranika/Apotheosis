@@ -14,6 +14,9 @@
 </head>
 
 <body>
+</div>
+    </div>
+</div>
   <p>
 <b class="calibre3">
 </b></p>
@@ -72,7 +75,7 @@
 
   <p>"Ah, he is Lenard Zhu! Lenard from Skytop Peak!" Nina murmured when she saw the young man.</p>
 
-  <p>Zheng also noticed this young man from a distance. This inner disciple, Lenard Zhu, had remarkable strength among the disciples present. At the fifth grade of the nature level, Lenard could battle a demon general alone and had not been defeated so far. It was thus established that he was the most outstanding disciple.</p>
+  <p>Luo Zheng also noticed this young man from a distance. This inner disciple, Lenard Zhu, had remarkable strength among the disciples present. At the fifth grade of the nature level, Lenard could battle a demon general alone and had not been defeated so far. It was thus established that he was the most outstanding disciple.</p>
 
   <p>There were many reasons why Skytop Peak was ranked the highest among the thirty-three peaks at Cloud Sect. One of those reasons was the outstanding abilities of its disciples.</p>
 
@@ -147,15 +150,18 @@
     background-color: #c0392b;
     transform: scale(1.05);
 }
-body {
-    padding-bottom: 50px;
+body { padding-bottom: 50px; }
+
+.dark-mode .control-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
 }
-</style>
-<div class="chapter-navigation">
-    <a href="Chapter_0172.html" class="nav-button">Previous</a>
-    <a href="index.html" class="index-button">Index</a>
-    <span class="chapter-info">Chapter 173 of 4334</span>
-    <a href="Chapter_0174.html" class="nav-button">Next</a>
-</div>
-</body>
-</html>
+
+.dark-mode .control-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .control-button.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
