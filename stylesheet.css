@@ -8,8 +8,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
-    background-color: #2b231d; /* Light mode background */
-    color: #e0e0e0;
+    background-color: #d1d1d1; /* Light mode background */
+    color: #2b231d;
 }
 
 .chapter-navigation {
@@ -37,7 +37,7 @@ body {
 }
 .nav-button, .control-button, .index-button {
     padding: 10px 16px;
-    background-color: white;
+    background-color: #d1d1d1;
     color: #2c3e50;
     text-decoration: none;
     border-radius: 5px;
