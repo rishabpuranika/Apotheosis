@@ -78,6 +78,8 @@ for ($i = 1; $i -le $totalChapters; $i++) {
 body {
     padding-bottom: 50px;
     font-size: 16px; /* Default font size */
+    background-color: #2b231d; /* Light mode background */
+    color: #e0e0e0; /* Light mode text color */
 }
 .dark-mode {
     background-color: #121212;

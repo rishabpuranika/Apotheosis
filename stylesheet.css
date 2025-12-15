@@ -2,13 +2,16 @@
     box-sizing: border-box;
 }
 body {
-    padding-bottom: 80px;
+    padding-bottom: 50px;
     padding-left: 15px;
     padding-right: 15px;
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
+    background-color: #2b231d; /* Light mode background */
+    color: #e0e0e0;
 }
+
 .chapter-navigation {
     position: fixed;
     bottom: 0;
