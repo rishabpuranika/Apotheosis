@@ -385,3 +385,32 @@ body.dark-mode .font-btn {
 body.dark-mode .settings-label {
     color: #aaa;
 }
+/* --- Inline Navigation (Top & Bottom) --- */
+.inline-nav {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px 0;
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.inline-nav a {
+    text-decoration: none;
+    color: #555;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Make links bigger on mobile for easy tapping */
+@media only screen and (max-width: 800px) {
+    .inline-nav a {
+        display: inline-block;
+        padding: 10px;
+        margin: 0 5px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        border: 1px solid #eee;
+    }
+}
