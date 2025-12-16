@@ -54,7 +54,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to right, #2c3e50, #3498db);
+    background: linear-gradient(to right, #2c3e50, #232B3E);
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
@@ -93,7 +93,7 @@ body {
 }
 
 .nav-button:hover, .control-button:hover {
-    background-color: #3498db;
+    background-color: #232B3E;
     color: white;
     transform: scale(1.05);
 }
@@ -151,7 +151,7 @@ body {
 
 /* Font size controls */
 .font-size-controls button.active {
-    background-color: #3498db;
+    background-color: #232B3E;
     color: white;
 }
 

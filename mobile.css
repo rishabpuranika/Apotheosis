@@ -1,0 +1,65 @@
+/* mobile.css */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --link-color: #0066cc;
+    --nav-bg: #f0f0f0;
+}
+
+/* Automatic Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --link-color: #66b3ff;
+        --nav-bg: #1e1e1e;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px; /* Readable mobile base size */
+    line-height: 1.6;
+    margin: 0;
+    padding: 16px;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+p {
+    margin-bottom: 1.2em;
+    text-align: justify;
+}
+
+/* Ensure images don't overflow the screen */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+}
+
+/* Navigation Button Styling */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.nav-button {
+    background-color: var(--nav-bg);
+    color: var(--text-color);
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #444;
+}
