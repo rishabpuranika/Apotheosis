@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apotheosis</title>
   <meta name="generator" content="pdftohtml 0.36"/>
   <meta name="author" content="Mobo Reader"/>
@@ -14,6 +15,81 @@
 </head>
 
 <body>
+    <div class="nav-trigger" onclick="toggleMenu()">&#9881;</div> 
+
+    <div class="nav-menu" id="navMenu">
+        
+        <a href="Chapter_1531.html">Previous Chapter</a>
+        <a href="index.html">Table of Contents</a>
+        <a href="Chapter_1533.html">Next Chapter</a>
+
+        <div class="settings-section">
+            <span class="settings-label">Font Size</span>
+            <button class="font-btn" onclick="adjustFont(-1)">A-</button>
+            <button class="font-btn" onclick="adjustFont(1)">A+</button>
+        </div>
+
+        <div class="settings-section" style="border-bottom: none;">
+            <span class="settings-label">Theme</span>
+            <button class="font-btn" style="width: 100%;" onclick="toggleDarkMode()">&#127769; Dark / Light</button>
+        </div>
+    </div>
+
+    <script>
+    // 1. Initialize Settings on Load
+    document.addEventListener("DOMContentLoaded", function() {
+        // Load Dark Mode
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.body.classList.add("dark-mode");
+        }
+        
+        // Load Font Size
+        var savedSize = localStorage.getItem("fontSize");
+        if (savedSize) {
+            document.body.style.fontSize = savedSize + "px";
+        }
+    });
+
+    // 2. Menu Toggle
+    function toggleMenu() {
+        var menu = document.getElementById("navMenu");
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    // 3. Font Size Adjustment
+    function adjustFont(delta) {
+        var style = window.getComputedStyle(document.body, null).getPropertyValue('font-size');
+        var currentSize = parseFloat(style);
+        var newSize = currentSize + delta;
+        
+        // Limit min/max size (e.g., 12px to 40px)
+        if (newSize >= 12 && newSize <= 40) {
+            document.body.style.fontSize = newSize + "px";
+            localStorage.setItem("fontSize", newSize);
+        }
+    }
+
+    // 4. Dark Mode Toggle
+    function toggleDarkMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+        
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    }
+    </script>
+     
+    
+    
+        <a href="Chapter_1531.html">Previous Chapter</a>
+        <a href="index.html">Table of Contents</a>
+        <a href="Chapter_1533.html">Next Chapter</a>
+    </div>
+
+    
 </div>
     </div>
 </div>
@@ -201,101 +277,8 @@
   <p><b class="calibre3">
 </b></p>
 
-<style>
-.chapter-navigation {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to right, #2c3e50, #232B3E);
-    padding: 8px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-.nav-button, .control-button {
-    padding: 8px 12px;
-    background-color: white;
-    color: #2c3e50;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s;
-    border: 2px solid white;
-    font-size: 14px;
-    cursor: pointer;
-}
-.nav-button:hover, .control-button:hover {
-    background-color: #232B3E;
-    color: white;
-    transform: scale(1.05);
-}
-.nav-button:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-.chapter-info {
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-}
-.index-button {
-    padding: 8px 16px;
-    background-color: #e74c3c;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s;
-    font-size: 14px;
-}
-.index-button:hover {
-    background-color: #c0392b;
-    transform: scale(1.05);
-}
-body {
-    padding-bottom: 50px;
-    font-size: 16px; /* Default font size */
-}
-.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-.dark-mode .chapter-navigation {
-    background: linear-gradient(to right, #1a2833, #236fa1);
-}
-.dark-mode .nav-button, .dark-mode .control-button {
-    background-color: #333;
-    color: #e0e0e0;
-    border-color: #555;
-}
-.dark-mode .nav-button:hover, .dark-mode .control-button:hover {
-    background-color: #236fa1;
-    color: white;
-}
-.dark-mode h2 {
-    color: #e0e0e0;
-}
-.font-size-controls button.active {
-    background-color: #232B3E;
-    color: white;
-}
-.dark-mode .font-size-controls button.active {
-    background-color: #236fa1;
-}
-.nav-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-</style>
-<div class="chapter-navigation">
-    <div class="nav-controls">
-        <a href="Chapter_1531.html" class="nav-button">Previous</a>
-        <a href="index.html" class="index-button">Index</a>
-        <a href="Chapter_1533.html" class="nav-button">Next</a>    </div>
+
+
     <span class="chapter-info">Chapter 1532 of 4334</span>
     <div class="nav-controls font-size-controls">
         <button id="darkModeToggle" class="control-button"></button>
@@ -353,6 +336,12 @@ body {
 </body>
 
 
+
+
+
+
 </html>
+
+
 
 
