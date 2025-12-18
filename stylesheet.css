@@ -8,8 +8,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
-    background-color: #18191A; /* Light mode background */
-    color: #8D9297;
+    background-color: #1a1a1a; /* Swapped background */
+    color: #c0c0c0;
     font-family: sans-serif;
 }
 
@@ -18,7 +18,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to right, #2c3e50, #232B3E);
+    background: linear-gradient(to right, #1a2833, #236fa1);
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
@@ -38,13 +38,13 @@ body {
 }
 .nav-button, .control-button, .index-button {
     padding: 10px 16px;
-    background-color: #d1d1d1;
-    color: #2c3e50;
+    background-color: #333;
+    color: #e0e0e0;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.3s;
-    border: 2px solid white;
+    border: 2px solid #555;
     font-size: 14px;
     cursor: pointer;
     display: inline-block;
@@ -55,7 +55,7 @@ body {
 }
 
 .nav-button:hover, .control-button:hover {
-    background-color: #232B3E;
+    background-color: #236fa1;
     color: white;
     transform: scale(1.05);
 }
@@ -83,25 +83,25 @@ body {
     white-space: nowrap;
 }
 
-/* Dark mode styles - KEEP ORIGINAL */
+/* Dark mode styles - SWAPPED */
 .dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #18191A;
+    color: #8D9297;
 }
 
 .dark-mode .chapter-navigation {
-    background: linear-gradient(to right, #1a2833, #236fa1);
+    background: linear-gradient(to right, #2c3e50, #232B3E);
 }
 
-.dark-mode .nav-button, 
+.dark-mode .nav-button,
 .dark-mode .control-button {
-    background-color: #333;
-    color: #e0e0e0;
-    border-color: #555;
+    background-color: #d1d1d1;
+    color: #2c3e50;
+    border-color: white;
 }
-.dark-mode .nav-button:hover, 
+.dark-mode .nav-button:hover,
 .dark-mode .control-button:hover {
-    background-color: #236fa1;
+    background-color: #232B3E;
     color: white;
 }
 
@@ -269,8 +269,8 @@ body {
     position: fixed;
     top: 15px;
     right: 15px;            /* Top-right corner */
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ccc;
+    background: #333;
+    border: 1px solid #555;
     border-radius: 50%;     /* Make it a circle */
     width: 40px;
     height: 40px;
@@ -289,8 +289,8 @@ body {
     position: fixed;
     top: 60px;              /* Just below the icon */
     right: 15px;
-    background: white;
-    border: 1px solid #ddd;
+    background: #333;
+    border: 1px solid #555;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     padding: 10px;
@@ -304,8 +304,8 @@ body {
     display: block;         /* Stack them vertically */
     padding: 10px;
     text-decoration: none;
-    color: #333;
-    border-bottom: 1px solid #eee;
+    color: #fff;
+    border-bottom: 1px solid #444;
 }
 
 .nav-menu a:last-child {
@@ -313,7 +313,7 @@ body {
 }
 
 .nav-menu a:hover {
-    background-color: #f5f5f5;
+    background-color: #444;
 }
 /* --- Advanced Settings Menu --- */
 .nav-menu {
@@ -322,13 +322,13 @@ body {
 
 .settings-section {
     padding: 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #444;
     text-align: center;
 }
 
 .settings-label {
     font-size: 12px;
-    color: #888;
+    color: #aaa;
     text-transform: uppercase;
     margin-bottom: 5px;
     display: block;
@@ -336,8 +336,8 @@ body {
 
 /* Font Controls */
 .font-btn {
-    background: #f0f0f0;
-    border: 1px solid #ccc;
+    background: #444;
+    border: 1px solid #666;
     padding: 5px 15px;
     margin: 0 5px;
     border-radius: 4px;
@@ -347,8 +347,8 @@ body {
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #1a1a1a !important;
-    color: #c0c0c0 !important;
+    background-color: #18191A !important;
+    color: #8D9297 !important;
 }
 
 body.dark-mode a {
@@ -356,34 +356,34 @@ body.dark-mode a {
 }
 
 /* Dark Mode Menu Styles */
-body.dark-mode .nav-menu, 
+body.dark-mode .nav-menu,
 body.dark-mode .nav-trigger {
-    background-color: #333;
-    border-color: #555;
-    color: #fff;
+    background: white;
+    border-color: #ddd;
+    color: black;
 }
 
 body.dark-mode .nav-menu a {
-    color: #fff !important;
-    border-bottom-color: #444;
+    color: #333 !important;
+    border-bottom-color: #eee;
 }
 
 body.dark-mode .nav-menu a:hover {
-    background-color: #444;
+    background-color: #f5f5f5;
 }
 
 body.dark-mode .settings-section {
-    border-bottom-color: #444;
+    border-bottom-color: #eee;
 }
 
 body.dark-mode .font-btn {
-    background-color: #444;
-    color: #fff;
-    border-color: #666;
+    background: #f0f0f0;
+    color: black;
+    border-color: #ccc;
 }
 
 body.dark-mode .settings-label {
-    color: #aaa;
+    color: black;
 }
 /* --- Inline Navigation (Top & Bottom) --- */
 .inline-nav {

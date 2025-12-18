@@ -1,18 +1,18 @@
 /* mobile.css */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --link-color: #0066cc;
-    --nav-bg: #f0f0f0;
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --link-color: #66b3ff;
+    --nav-bg: #1e1e1e;
 }
 
 /* Automatic Dark Mode Support */
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: #121212;
-        --text-color: #e0e0e0;
-        --link-color: #66b3ff;
-        --nav-bg: #1e1e1e;
+        --bg-color: #ffffff;
+        --text-color: #1a1a1a;
+        --link-color: #0066cc;
+        --nav-bg: #f0f0f0;
     }
 }
 
